@@ -1,0 +1,172 @@
+fecha,nombre,mensaje,tipo,estado,respuesta_ia
+17/04/2026 18:27,Nati,"Quiero pedir una cita.
+",cita,cita agendada,"¡Hola Nati! Me alegra que quieras venir a visitarnos.
+
+Para ayudarte a reservar tu cita, me gustaría saber un poco más:
+
+- ¿Hay alguna zona del cuerpo en la que sientas molestias o dolor?
+- ¿Es tu primera vez en nuestra clínica o has estado con nosotros antes?
+- ¿Tienes algún día u hora que te venga especialmente bien?
+
+Con esta información podré gestionar mejor tu cita y asignar al fisioterapeuta más adecuado para ti. También puedes llamarnos directamente si lo prefieres, así podremos confirmar la disponibilidad de forma inmediata.
+
+¿Me cuentas un poco más sobre qué te trae hoy?"
+17/04/2026 18:28,Nati,"Tengo dolor en las dorsales.
+
+",dolor,nuevo,"Hola Nati,
+
+Gracias por contactarnos. Lamento que tengas molestias en la zona dorsal.
+
+El dolor en las dorsales puede tener varias causas: desde problemas de postura, tensión muscular, estrés, o lesiones más específicas. Para poder ayudarte de forma adecuada, necesitaría conocer más detalles, como cuándo comenzó el dolor, si es constante o intermitente, si está relacionado con alguna actividad específica, o si hay otros síntomas asociados.
+
+Lo más recomendable sería que vieras a uno de nuestros fisioterapeutas para una valoración completa. En esa primera cita podríamos evaluar tu situación, identificar el origen del problema y diseñar un tratamiento personalizado para ti.
+
+¿Te gu"
+17/04/2026 18:32,Nati,"Tengo dolor lumbar.
+
+",dolor,contactado,"Hola Nati,
+
+Gracias por contactarnos. Sentimos que tengas dolor lumbar. Este es uno de los problemas más comunes que tratamos en la clínica, y en la mayoría de los casos podemos ayudarte significativamente.
+
+Para poder orientarte mejor, me gustaría saber un poco más:
+
+- ¿Cuánto tiempo llevas con este dolor?
+- ¿Recuerdas si fue por algún movimiento específico o ha aparecido poco a poco?
+- ¿Hay algo que lo mejore o lo empeore (posiciones, actividades, etc.)?
+- ¿Sientes dolor en otras zonas (glúteos, piernas)?
+
+Lo ideal sería que realicemos una valoración personalizada en la clínica. Durante esta cita, haremos un anál"
+17/04/2026 18:35,Nati,"Tengo dolor lumbar.
+
+",dolor,nuevo,"Hola Nati,
+
+Gracias por contactarnos. Lamento que tengas molestias en la zona lumbar. El dolor de espalda baja es algo muy común y en la mayoría de casos podemos ayudarte a mejorar significativamente.
+
+Para poder darte una respuesta más precisa y personalizada, me gustaría conocer un poco más:
+
+- ¿Cuánto tiempo llevas con este dolor?
+- ¿Es un dolor constante o aparece en momentos específicos?
+- ¿Hay algún movimiento o actividad que lo aumente o lo mejore?
+- ¿Has sufrido algún golpe o esfuerzo reciente?
+
+En cualquier caso, lo más recomendable sería que vinieras a una valoración inicial. Así podríamos evaluar tu caso"
+19/04/2026 22:20,Nati,"Quiero pedir una cita.
+",cita,cita agendada,"Hola Nati,
+
+¡Claro! Me encanta poder ayudarte a reservar tu cita.
+
+Para poder ofrecerte la mejor atención, me gustaría saber:
+
+- ¿Cuál es el motivo principal de tu consulta? (molestias, lesión, revisión general, etc.)
+- ¿Tienes alguna zona del cuerpo que te cause más discomfort en estos momentos?
+- ¿Hay algo específico que necesites que abordemos en tu valoración inicial?
+
+Una vez que me cuentes un poco más, podré facilitarte los horarios disponibles y agendar tu cita cuanto antes.
+
+¿Qué te trae por aquí?"
+19/04/2026 22:25,Nati,Tengo dolor cervical.,dolor,nuevo,"Hola Nati,
+
+Gracias por contactar con nosotros. El dolor cervical es algo que tratamos frecuentemente en la clínica y, aunque las causas pueden ser muy variadas, lo importante es identificar qué lo está provocando en tu caso específico.
+
+Para ayudarte mejor, me gustaría saber un poco más:
+
+- ¿Desde cuándo tienes este dolor?
+- ¿Es un dolor constante o intermitente?
+- ¿Has sufrido algún golpe o accidente recientemente?
+- ¿Notas que mejora o empeora con alguna postura o actividad?
+- ¿Va acompañado de otros síntomas como mareos, hormigueos o limitación de movimiento?
+
+De todas formas, lo más recomendable sería que"
+20/04/2026 17:14,Iago,"Tengo dolor de espalda.
+",dolor,nuevo,"Hola Iago,
+
+Gracias por contactar con nosotros. Siento que tengas molestias en la espalda. El dolor de espalda es algo que tratamos frecuentemente en nuestra clínica y, en la mayoría de los casos, responde muy bien al tratamiento fisioterápico.
+
+Para poder ayudarte de la mejor manera, sería importante conocer un poco más sobre tu situación:
+
+- ¿Desde cuándo tienes este dolor?
+- ¿Es dolor agudo o más bien crónico?
+- ¿Hay algún movimiento o actividad que lo aumente o lo mejore?
+- ¿Has sufrido alguna lesión o caída recientemente?
+
+Lo ideal sería que vinieras a una valoración inicial, donde podríamos evaluar tu espalda"
+20/04/2026 17:58,Iago,"Quiero agendar una cita.
+",cita,cita agendada,"¡Hola Iago! Me alegra que te pongas en contacto con nosotros.
+
+Para ayudarte a agendar tu cita de la mejor forma, me gustaría saber:
+
+1. ¿Es tu primera vez en la clínica o ya has estado con nosotros antes?
+2. ¿Hay alguna zona del cuerpo o molestia específica por la que quieras ser valorado?
+3. ¿Tienes alguna preferencia de día u horario?
+
+Con esta información podré gestionar tu solicitud de cita más fácilmente. Si prefieres, también puedes llamarnos directamente al teléfono de la clínica o pasar por recepción para concertar tu valoración de fisioterapia.
+
+¿Hay algo en particular que te haya tra"
+20/04/2026 18:04,Natalia,Hola quiero agendar una cita.,cita,cita agendada,"Hola Natalia,
+
+¡Qué bien! Me alegra que quieras agendar una cita con nosotros.
+
+Para poder ayudarte mejor, me gustaría conocer un poco más:
+
+- ¿Qué tipo de molestia o lesión tienes actualmente?
+- ¿Hace cuánto tiempo que la padeces?
+- ¿Es la primera vez que acudes a fisioterapia o ya has recibido tratamiento antes?
+
+Esta información nos permitirá estar mejor preparados para tu valoración inicial y ofrecerte una atención más personalizada.
+
+Si lo prefieres, también puedes contactar directamente con nuestro equipo administrativo para reservar tu cita. Ellos podrán agendar el horario que mejor te venga y responder cualquier pregunta logística."
+20/04/2026 18:08,Nati,Hola dame una cita.,cita,cita agendada,"¡Hola Nati! 
+
+Nos encantaría poder ayudarte. Para reservar tu cita, necesitaría algunos datos:
+
+1. ¿Cuál es el motivo de tu consulta? (dolor, lesión, rehabilitación, etc.)
+2. ¿Qué zona del cuerpo te preocupa?
+3. ¿Qué días y horarios te van mejor?
+
+Una vez que me proporciones esta información, podré gestionar tu cita con el fisioterapeuta que mejor se adapte a tus necesidades.
+
+¿Me cuentes un poco más para poder ayudarte mejor?"
+20/04/2026 18:14,Nati,Quiero pedir una cita en vuestra clínica.,cita,cita agendada,"¡Hola Nati!
+
+Me da mucha alegría que te interese visitarnos. Estaré encantado de ayudarte a reservar tu cita.
+
+Para poder agendar tu valoración inicial, necesito algunos datos:
+
+- ¿Cuál es la zona o tipo de molestia que te trae por aquí? (espalda, hombro, rodilla, lesión deportiva, etc.)
+- ¿Tienes alguna preferencia de días u horarios que te vayan mejor?
+- ¿Hay algún horario que te resulte más complicado?
+
+También puedo facilitarte nuestro teléfono de contacto o información sobre cómo reservar directamente en nuestro sistema, según lo que prefieras.
+
+¿Me cuentas un poco más para poder ayudarte"
+20/04/2026 18:16,Natalia.,Quiero pedir una cita en vuestra clínica.,cita,cita agendada,"¡Hola Natalia!
+
+Nos alegra mucho que quieras visitarnos. Estaremos encantados de ayudarte.
+
+Para agendar tu cita, te propongo dos opciones:
+
+1. Puedes llamarnos directamente al teléfono de la clínica para reservar el día y hora que mejor te venga.
+
+2. Si lo prefieres, puedes escribirnos indicándonos qué días tienes disponibilidad y qué tipo de tratamiento necesitas, y nosotros nos adaptamos.
+
+Antes de tu primera visita, nos vendría bien saber:
+- ¿Qué zona del cuerpo te causa molestias?
+- ¿Hay algún motivo específico por el que buscas fisioterapia?
+
+Con esta información podremos preparar"
+20/04/2026 22:19,Ramón,Quiero pedir cita para fisoterapia.,cita,nuevo,"Hola Ramón,
+
+¡Muy bien! Me alegra que quieras venir a vernos.
+
+Para poder ayudarte de la mejor forma, necesitaría saber un poco más:
+
+- ¿Cuál es el motivo de tu consulta? (dolor, lesión, rehabilitación, etc.)
+- ¿Hay alguna zona específica del cuerpo que te preocupe?
+- ¿Hace cuánto tiempo que tienes molestias?
+
+Con esta información podré agendar tu valoración con el fisioterapeuta más adecuado para tu caso. ¿Qué tal te viene? También puedo ayudarte a elegir el mejor horario según tu disponibilidad.
+
+Espero tu respuesta.
+
+Un saludo,
+Equipo de Fisioterapia"

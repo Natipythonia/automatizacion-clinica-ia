@@ -1,0 +1,2 @@
+tengo dolor en la rodilla
+& c:/users/user/anaconda3/python.exe "c:/users/user/onedrive/escritorio/proyecto claude/automatizacion_clinica/main.py"

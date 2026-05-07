@@ -1,0 +1,14 @@
+& c:/users/user/anaconda3/python.exe "c:/users/user/onedrive/escritorio/proyecto claude/automatizacion_clinica/main.py"
+& c:/users/user/anaconda3/python.exe "c:/users/user/onedrive/escritorio/proyecto claude/automatizacion_clinica/main.py"
+[17/04/2026 11:12] Nati: & c:/users/user/anaconda3/python.exe "c:/users/user/onedrive/escritorio/proyecto claude/automatizacion_clinica/main.py"
+[17/04/2026 16:32] Nati: Hola, quería saber vuestro horario
+Respuesta IA: ¡Hola Nati! 👋
+
+Gracias por contactarnos. Me encantaría ayudarte, pero en este momento no tengo acceso a nuestro horario exacto en el sistema.
+
+Te recomiendo:
+- **Llamar directamente a la clínica** para confirmar horarios
+- **Solicitar una cita** y nuestro equipo te dará todos los detalles
+
+¿Hay algo más en lo que pueda ayudarte o deseas agendar una cita?
+
