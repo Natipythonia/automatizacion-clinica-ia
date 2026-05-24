@@ -22,6 +22,8 @@ if "nombre_para_cita" not in st.session_state:
     st.session_state.nombre_para_cita = ""
 if "errores_cita" not in st.session_state:
     st.session_state.errores_cita = []
+if "telefono_para_cita" not in st.session_state:
+    st.session_state.telefono_para_cita = ""
 
 # Cliente Claude
 client = Anthropic(api_key=os.getenv("ANTHROPIC_API_KEY"))
@@ -30,6 +32,12 @@ client = Anthropic(api_key=os.getenv("ANTHROPIC_API_KEY"))
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 RUTA_CREDENCIALES = os.path.join(BASE_DIR, "credentials", "google_credentials.json")
 RUTA_CSV = os.path.join(BASE_DIR, "..", "leads.csv")
+RUTA_CITAS_PROGRAMADAS = os.path.join(BASE_DIR, "..", "citas_programadas.csv")
+
+_CABECERAS_CITAS = [
+    "nombre", "email", "telefono", "fecha_hora",
+    "recordatorio_24h_enviado", "recordatorio_2h_enviado",
+]
 
 # Conexión con Google Sheets (cacheada para no reconectar en cada rerun)
 @st.cache_resource
@@ -89,6 +97,22 @@ Clínica de Fisioterapia
     with smtplib.SMTP_SSL("smtp.gmail.com", 465) as server:
         server.login(GMAIL_USER, GMAIL_PASSWORD)
         server.sendmail(GMAIL_USER, email_paciente, msg.as_string())
+
+
+def guardar_cita_programada(nombre, email, telefono, fecha_hora):
+    existe = os.path.exists(RUTA_CITAS_PROGRAMADAS)
+    with open(RUTA_CITAS_PROGRAMADAS, "a", newline="", encoding="utf-8") as f:
+        writer = csv.DictWriter(f, fieldnames=_CABECERAS_CITAS)
+        if not existe:
+            writer.writeheader()
+        writer.writerow({
+            "nombre": nombre,
+            "email": email,
+            "telefono": telefono or "",
+            "fecha_hora": fecha_hora.isoformat(),
+            "recordatorio_24h_enviado": "no",
+            "recordatorio_2h_enviado": "no",
+        })
 
 
 # Crear CSV si no existe
@@ -215,6 +239,10 @@ if st.session_state.mostrar_form_cita:
         hora_cita = st.time_input("Hora", value=datetime.strptime("09:00", "%H:%M").time())
 
     email_paciente = st.text_input("Tu email para la confirmación")
+    telefono_paciente = st.text_input(
+        "Tu teléfono (opcional, para recordatorio por WhatsApp)",
+        placeholder="+34 600 000 000",
+    )
 
     if st.button("✅ Confirmar cita"):
         if not email_paciente:
@@ -230,6 +258,17 @@ if st.session_state.mostrar_form_cita:
                 )
             except Exception as e:
                 errores.append(f"Google Calendar: {e}")
+
+            # Guardar cita para recordatorios automáticos
+            try:
+                guardar_cita_programada(
+                    st.session_state.nombre_para_cita,
+                    email_paciente,
+                    telefono_paciente,
+                    fecha_hora_cita,
+                )
+            except Exception as e:
+                errores.append(f"Recordatorios: {e}")
 
             # Email de confirmación
             try:
@@ -268,11 +307,13 @@ if st.session_state.mostrar_form_cita:
                 st.session_state.errores_cita = errores
                 st.session_state.mostrar_form_cita = False
                 st.session_state.nombre_para_cita = ""
+                st.session_state.telefono_para_cita = ""
                 st.rerun()
             else:
                 st.session_state.errores_cita = []
                 st.session_state.mostrar_form_cita = False
                 st.session_state.nombre_para_cita = ""
+                st.session_state.telefono_para_cita = ""
                 st.success(
                     f"Cita confirmada para el {fecha_hora_cita.strftime('%d/%m/%Y a las %H:%M')}. "
                     f"Se ha enviado confirmación a {email_paciente}."

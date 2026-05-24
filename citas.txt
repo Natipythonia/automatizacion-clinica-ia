@@ -348,3 +348,31 @@ Espero tu respuesta.
 Un saludo,
 Equipo de Fisioterapia
 --------------------------------------------------
+[08/05/2026 10:47] Sara: Hola, quiero pedir una cita para fisioterapia.
+Respuesta IA: Hola Sara, ¡qué alegría que te pongas en contacto con nosotros!
+
+Te ayudaré con gusto a gestionar tu cita. Para poder orientarte mejor, me gustaría saber:
+
+- ¿Tienes alguna molestia o lesión específica por la que quieras venir a valoración?
+- ¿Es la primera vez que acudes a fisioterapia o ya has tenido tratamiento anterior?
+- ¿Tienes algún día u horario que te venga mejor?
+
+Con esta información podré asignarte la cita con el fisioterapeuta más adecuado. Si prefieres, también puedes llamarnos directamente al teléfono de la clínica o pasar por recepción.
+
+¿Hay algo en particular que te esté molestando
+--------------------------------------------------
+[08/05/2026 10:53] Sara: Hola, quiero pedir una cita para fisioterapia.
+Respuesta IA: Hola Sara,
+
+¡Bienvenida! Me alegra que te pongas en contacto con nosotros.
+
+Te ayudaré encantado a gestionar tu cita. Para poder ofrecerte la mejor atención, me gustaría saber un poco más:
+
+¿Qué tipo de molestia o lesión te trae por la clínica? Por ejemplo, dolor de espalda, rodilla, hombro, recuperación post-operatoria, o algo distinto.
+
+¿Hay algún día u hora que te venga especialmente bien?
+
+Una vez que me des estos detalles, podré reservarte una cita con el fisioterapeuta más apropiado. En la valoración inicial podremos evaluar tu caso en detalle y diseñar un plan de tratamiento personalizado.
+
+¿Qué te par
+--------------------------------------------------

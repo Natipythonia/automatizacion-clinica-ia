@@ -1,6 +1,6 @@
 fecha,nombre,mensaje,tipo,estado,respuesta_ia
 17/04/2026 18:27,Nati,"Quiero pedir una cita.
-",cita,cita agendada,"¡Hola Nati! Me alegra que quieras venir a visitarnos.
+",cita,nuevo,"¡Hola Nati! Me alegra que quieras venir a visitarnos.
 
 Para ayudarte a reservar tu cita, me gustaría saber un poco más:
 
@@ -78,7 +78,7 @@ Para ayudarte mejor, me gustaría saber un poco más:
 
 De todas formas, lo más recomendable sería que"
 20/04/2026 17:14,Iago,"Tengo dolor de espalda.
-",dolor,nuevo,"Hola Iago,
+",dolor,contactado,"Hola Iago,
 
 Gracias por contactar con nosotros. Siento que tengas molestias en la espalda. El dolor de espalda es algo que tratamos frecuentemente en nuestra clínica y, en la mayoría de los casos, responde muy bien al tratamiento fisioterápico.
 
@@ -170,3 +170,27 @@ Espero tu respuesta.
 
 Un saludo,
 Equipo de Fisioterapia"
+08/05/2026 10:47,Sara,"Hola, quiero pedir una cita para fisioterapia.",cita,cita agendada,"Hola Sara, ¡qué alegría que te pongas en contacto con nosotros!
+
+Te ayudaré con gusto a gestionar tu cita. Para poder orientarte mejor, me gustaría saber:
+
+- ¿Tienes alguna molestia o lesión específica por la que quieras venir a valoración?
+- ¿Es la primera vez que acudes a fisioterapia o ya has tenido tratamiento anterior?
+- ¿Tienes algún día u horario que te venga mejor?
+
+Con esta información podré asignarte la cita con el fisioterapeuta más adecuado. Si prefieres, también puedes llamarnos directamente al teléfono de la clínica o pasar por recepción.
+
+¿Hay algo en particular que te esté molestando"
+08/05/2026 10:53,Sara,"Hola, quiero pedir una cita para fisioterapia.",cita,nuevo,"Hola Sara,
+
+¡Bienvenida! Me alegra que te pongas en contacto con nosotros.
+
+Te ayudaré encantado a gestionar tu cita. Para poder ofrecerte la mejor atención, me gustaría saber un poco más:
+
+¿Qué tipo de molestia o lesión te trae por la clínica? Por ejemplo, dolor de espalda, rodilla, hombro, recuperación post-operatoria, o algo distinto.
+
+¿Hay algún día u hora que te venga especialmente bien?
+
+Una vez que me des estos detalles, podré reservarte una cita con el fisioterapeuta más apropiado. En la valoración inicial podremos evaluar tu caso en detalle y diseñar un plan de tratamiento personalizado.
+
+¿Qué te par"
