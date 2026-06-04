@@ -45,46 +45,46 @@ def conectar_sheets():
     import json
     SHEET_ID = "1KrBxM1JAJ5ipDnvLB88vMOwCP_aYvMkPiVE1a7I-In0"
     
-try:
-    # Obtener credenciales de Google
-    creds = None
+    try:
+        # Obtener credenciales de Google
+        creds = None
 
-    if "gcp_service_account" in st.secrets:
-        creds = dict(st.secrets["gcp_service_account"])
+        if "gcp_service_account" in st.secrets:
+            creds = dict(st.secrets["gcp_service_account"])
+
+            st.write("TIPO:", type(creds))
+            st.write("CLAVES:", creds.keys())
+
+            # Si fuese string, convertir a JSON
+            if isinstance(creds, str):
+                creds = json.loads(creds)
+
+        elif os.path.exists(RUTA_CREDENCIALES):
+            with open(RUTA_CREDENCIALES) as f:
+                creds = json.load(f)
+
+        else:
+            raise Exception(
+                f"No se encontraron credenciales de Google. "
+                f"Verifica que exista {RUTA_CREDENCIALES} "
+                f"o que esté configurado en secrets"
+            )
+
+        if not creds:
+            raise Exception(
+                "Las credenciales de Google no fueron cargadas correctamente"
+            )
 
         st.write("TIPO:", type(creds))
-        st.write("CLAVES:", creds.keys())
+        st.write("PROJECT_ID:", creds.get("project_id"))
+        st.write("CLIENT_EMAIL:", creds.get("client_email"))
 
-        # Si fuese string, convertir a JSON
-        if isinstance(creds, str):
-            creds = json.loads(creds)
+        gc = gspread.service_account_from_dict(creds)
 
-    elif os.path.exists(RUTA_CREDENCIALES):
-        with open(RUTA_CREDENCIALES) as f:
-            creds = json.load(f)
+        return gc.open_by_key(SHEET_ID).sheet1
 
-    else:
-        raise Exception(
-            f"No se encontraron credenciales de Google. "
-            f"Verifica que exista {RUTA_CREDENCIALES} "
-            f"o que esté configurado en secrets"
-        )
-
-    if not creds:
-    raise Exception(
-        "Las credenciales de Google no fueron cargadas correctamente"
-    )
-
-st.write("TIPO:", type(creds))
-st.write("PROJECT_ID:", creds.get("project_id"))
-st.write("CLIENT_EMAIL:", creds.get("client_email"))
-
-gc = gspread.service_account_from_dict(creds)
-
-return gc.open_by_key(SHEET_ID).sheet1
-
-except Exception as e:
-    raise Exception(f"Google Sheets error: {str(e)}")
+    except Exception as e:
+        raise Exception(f"Google Sheets error: {str(e)}")
 
 import traceback
 
