@@ -68,11 +68,14 @@ def conectar_sheets():
     except Exception as e:
         raise Exception(f"Google Sheets error: {str(e)}")
 
+import traceback
+
 try:
     hoja = conectar_sheets()
     sheets_ok = True
 except Exception as e:
-    st.info(f"ℹ️ Google Sheets no disponible (esto es opcional): {e}")
+    st.error("🚨 ERROR GOOGLE SHEETS")
+    st.code(traceback.format_exc())
     hoja = None
     sheets_ok = False
     # La app seguirá funcionando sin Google Sheets
