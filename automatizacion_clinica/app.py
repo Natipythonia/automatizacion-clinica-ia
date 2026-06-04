@@ -78,7 +78,8 @@ def conectar_sheets():
         st.write("TIPO:", type(creds))
         st.write("PROJECT_ID:", creds.get("project_id"))
         st.write("CLIENT_EMAIL:", creds.get("client_email"))
-
+        st.write(type(creds["private_key"]))
+        st.write(creds["private_key"][:30])
         gc = gspread.service_account_from_dict(creds)
 
         return gc.open_by_key(SHEET_ID).sheet1
