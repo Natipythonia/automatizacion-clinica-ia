@@ -42,29 +42,55 @@ _CABECERAS_CITAS = [
 # Conexión con Google Sheets (cacheada para no reconectar en cada rerun)
 @st.cache_resource
 def conectar_sheets():
-    SHEET_ID = "..."
-
-    gc = gspread.service_account_from_dict(
-        st.secrets["gcp_service_account"]
-    )
-
-    return gc.open_by_key(SHEET_ID).sheet1
+    import json
+    SHEET_ID = "..."  # Reemplaza con tu Sheet ID
+    
+    try:
+        # Obtener credenciales de Google
+        if "gcp_service_account" in st.secrets:
+            creds = st.secrets["gcp_service_account"]
+            # Si es string, parsearlo a dict
+            if isinstance(creds, str):
+                creds = json.loads(creds)
+        else:
+            # Alternativa: cargar desde archivo JSON
+            creds = json.load(open(RUTA_CREDENCIALES))
+        
+        gc = gspread.service_account_from_dict(creds)
+        return gc.open_by_key(SHEET_ID).sheet1
+    except Exception as e:
+        raise Exception(f"No se pudo conectar a Google Sheets: {str(e)}")
 
 try:
     hoja = conectar_sheets()
     sheets_ok = True
 except Exception as e:
-    st.warning(f"Google Sheets no disponible: {e}")
+    st.info(f"ℹ️ Google Sheets no disponible: {e}")
     hoja = None
     sheets_ok = False
 
 
 def crear_evento_calendar(nombre, fecha_hora, email_paciente=None):
+    import json
     SCOPES = ["https://www.googleapis.com/auth/calendar"]
-    creds = service_account.Credentials.from_service_account_info(
-    st.secrets["gcp_service_account"],
-    scopes=SCOPES
-)
+    
+    try:
+        # Obtener credenciales de Google
+        if "gcp_service_account" in st.secrets:
+            creds_dict = st.secrets["gcp_service_account"]
+            if isinstance(creds_dict, str):
+                creds_dict = json.loads(creds_dict)
+        else:
+            creds_dict = json.load(open(RUTA_CREDENCIALES))
+        
+        creds = service_account.Credentials.from_service_account_info(
+            creds_dict,
+            scopes=SCOPES
+        )
+    except Exception as e:
+        st.error(f"No se pudo autenticar con Google Calendar: {e}")
+        return
+    
     service = build("calendar", "v3", credentials=creds)
 
     fin = fecha_hora + timedelta(hours=1)
