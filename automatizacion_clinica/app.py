@@ -45,7 +45,7 @@ def conectar_sheets():
     SHEET_ID = "..."
 
     gc = gspread.service_account_from_dict(
-        dict(st.secrets["gcp_service_account"])
+        st.secrets["gcp_service_account"]
     )
 
     return gc.open_by_key(SHEET_ID).sheet1
@@ -62,7 +62,7 @@ except Exception as e:
 def crear_evento_calendar(nombre, fecha_hora, email_paciente=None):
     SCOPES = ["https://www.googleapis.com/auth/calendar"]
     creds = service_account.Credentials.from_service_account_info(
-    dict(st.secrets["gcp_service_account"]),
+    st.secrets["gcp_service_account"],
     scopes=SCOPES
 )
     service = build("calendar", "v3", credentials=creds)
