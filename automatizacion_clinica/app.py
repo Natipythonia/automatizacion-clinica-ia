@@ -43,7 +43,7 @@ _CABECERAS_CITAS = [
 @st.cache_resource
 def conectar_sheets():
     import json
-    SHEET_ID = "..."  # Reemplaza con tu Sheet ID
+    SHEET_ID = "1KrBxM1JAJ5ipDnvLB88vMOwCP_aYvMkPiVE1a7I-In0"
     
     try:
         # Obtener credenciales de Google
