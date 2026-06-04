@@ -3,4 +3,9 @@ credentials/
 __pycache__/
 *.pyc
 *.csv
-
+*.pem
+*.key
+citas.txt
+dolor.txt
+leads.txt
+otros.txt
