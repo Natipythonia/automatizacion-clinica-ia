@@ -43,7 +43,10 @@ _CABECERAS_CITAS = [
 @st.cache_resource
 def conectar_sheets():
     SHEET_ID = "1KrBxM1JAJ5ipDnvLB88vMOwCP_aYvMkPiVE1a7I-In0"
-    gc = gspread.service_account(filename=RUTA_CREDENCIALES)
+    if "gcp_service_account" in st.secrets:
+        gc = gspread.service_account_from_dict(dict(st.secrets["gcp_service_account"]))
+    else:
+        gc = gspread.service_account(filename=RUTA_CREDENCIALES)
     return gc.open_by_key(SHEET_ID).sheet1
 
 try:
@@ -57,9 +60,14 @@ except Exception as e:
 
 def crear_evento_calendar(nombre, fecha_hora, email_paciente=None):
     SCOPES = ["https://www.googleapis.com/auth/calendar"]
-    creds = service_account.Credentials.from_service_account_file(
-        RUTA_CREDENCIALES, scopes=SCOPES
-    )
+    if "gcp_service_account" in st.secrets:
+        creds = service_account.Credentials.from_service_account_info(
+            dict(st.secrets["gcp_service_account"]), scopes=SCOPES
+        )
+    else:
+        creds = service_account.Credentials.from_service_account_file(
+            RUTA_CREDENCIALES, scopes=SCOPES
+        )
     service = build("calendar", "v3", credentials=creds)
 
     fin = fecha_hora + timedelta(hours=1)
