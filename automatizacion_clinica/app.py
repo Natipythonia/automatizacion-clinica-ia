@@ -47,19 +47,26 @@ def conectar_sheets():
     
     try:
         # Obtener credenciales de Google
+        creds = None
+        
         if "gcp_service_account" in st.secrets:
             creds = st.secrets["gcp_service_account"]
             # Si es string, parsearlo a dict
             if isinstance(creds, str):
                 creds = json.loads(creds)
+        elif os.path.exists(RUTA_CREDENCIALES):
+            with open(RUTA_CREDENCIALES) as f:
+                creds = json.load(f)
         else:
-            # Alternativa: cargar desde archivo JSON
-            creds = json.load(open(RUTA_CREDENCIALES))
+            raise Exception(f"No se encontraron credenciales de Google. Verifica que exista {RUTA_CREDENCIALES} o que esté configurado en secrets")
         
+        if not creds:
+            raise Exception("Las credenciales de Google no fueron cargadas correctamente")
+            
         gc = gspread.service_account_from_dict(creds)
         return gc.open_by_key(SHEET_ID).sheet1
     except Exception as e:
-        raise Exception(f"No se pudo conectar a Google Sheets: {str(e)}")
+        raise Exception(f"Google Sheets error: {str(e)}")
 
 try:
     hoja = conectar_sheets()
