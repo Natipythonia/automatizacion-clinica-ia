@@ -72,9 +72,10 @@ try:
     hoja = conectar_sheets()
     sheets_ok = True
 except Exception as e:
-    st.info(f"ℹ️ Google Sheets no disponible: {e}")
+    st.info(f"ℹ️ Google Sheets no disponible (esto es opcional): {e}")
     hoja = None
     sheets_ok = False
+    # La app seguirá funcionando sin Google Sheets
 
 
 def crear_evento_calendar(nombre, fecha_hora, email_paciente=None):
