@@ -14,9 +14,6 @@ from googleapiclient.discovery import build
 
 load_dotenv()
 
-st.write("SECRETS DISPONIBLES:")
-st.write(list(st.secrets.keys()))
-
 if "chat" not in st.session_state:
     st.session_state.chat = []
 if "mostrar_form_cita" not in st.session_state:
