@@ -94,12 +94,8 @@ def crear_evento_calendar(nombre, fecha_hora, email_paciente=None):
     CALENDAR_ID = st.secrets["GOOGLE_CALENDAR_ID"]
     service.events().insert(calendarId=CALENDAR_ID, body=evento).execute()
 
-    st.write("✅ Evento creado")
-
 
 def enviar_email_confirmacion(email_paciente, nombre, fecha_hora):
-
-    st.write("📧 Entrando en Gmail")
 
     GMAIL_USER = st.secrets["GMAIL_USER"]
     GMAIL_APP_PASSWORD = st.secrets["GMAIL_APP_PASSWORD"]
@@ -124,8 +120,6 @@ Clínica de Fisioterapia
     with smtplib.SMTP_SSL("smtp.gmail.com", 465) as server:
         server.login(GMAIL_USER, GMAIL_APP_PASSWORD)
         server.sendmail(GMAIL_USER, email_paciente, msg.as_string())
-
-    st.write("✅ Email enviado")
 
 
 def guardar_cita_programada(nombre, email, telefono, fecha_hora):
@@ -278,8 +272,6 @@ if st.session_state.mostrar_form_cita:
             st.warning("Introduce tu email para recibir la confirmación.")
         else:
             fecha_hora_cita = datetime.combine(fecha_cita, hora_cita)
-
-            st.write("🚀 Llegué al bloque de confirmación")
 
             errores = []
 
