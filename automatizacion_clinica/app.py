@@ -67,6 +67,8 @@ except Exception as e:
 
 def crear_evento_calendar(nombre, fecha_hora, email_paciente=None):
 
+    st.write("📅 Entrando en Google Calendar")
+
     SCOPES = ["https://www.googleapis.com/auth/calendar"]
 
     if "gcp_service_account" in st.secrets:
@@ -92,8 +94,12 @@ def crear_evento_calendar(nombre, fecha_hora, email_paciente=None):
     CALENDAR_ID = st.secrets["GOOGLE_CALENDAR_ID"]
     service.events().insert(calendarId=CALENDAR_ID, body=evento).execute()
 
+    st.write("✅ Evento creado")
+
 
 def enviar_email_confirmacion(email_paciente, nombre, fecha_hora):
+
+    st.write("📧 Entrando en Gmail")
 
     GMAIL_USER = st.secrets["GMAIL_USER"]
     GMAIL_APP_PASSWORD = st.secrets["GMAIL_APP_PASSWORD"]
@@ -118,6 +124,8 @@ Clínica de Fisioterapia
     with smtplib.SMTP_SSL("smtp.gmail.com", 465) as server:
         server.login(GMAIL_USER, GMAIL_APP_PASSWORD)
         server.sendmail(GMAIL_USER, email_paciente, msg.as_string())
+
+    st.write("✅ Email enviado")
 
 
 def guardar_cita_programada(nombre, email, telefono, fecha_hora):
