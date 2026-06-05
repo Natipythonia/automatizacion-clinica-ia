@@ -367,6 +367,8 @@ def colorear_estado(val):
         return "background-color: #81D4FA"
     elif val == "cita agendada":
         return "background-color: #A5D6A7"
+    elif val == "cancelado":
+        return "background-color: #EF9A9A"
     return ""
 
 
@@ -390,8 +392,9 @@ st.markdown("## ✏️ Actualizar estado de lead")
 if not df.empty:
     indice_lead = st.selectbox("Selecciona el lead por índice", df.index.tolist())
     nuevo_estado = st.selectbox(
-        "Nuevo estado", ["nuevo", "contactado", "cita agendada"]
-    )
+    "Nuevo estado",
+    ["nuevo", "contactado", "cita agendada", "cancelado"]
+)
 
     if st.button("Actualizar estado"):
         df.loc[indice_lead, "estado"] = nuevo_estado
