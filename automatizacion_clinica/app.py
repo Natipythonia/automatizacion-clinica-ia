@@ -336,11 +336,15 @@ if st.session_state.mostrar_form_cita:
                     errores.append(f"Sheets estado: {e}")
 
             if errores:
+                st.write("ERRORES DETECTADOS:")
+                st.write(errores)
+
                 st.session_state.errores_cita = errores
-                st.session_state.mostrar_form_cita = False
-                st.session_state.nombre_para_cita = ""
-                st.session_state.telefono_para_cita = ""
-                st.rerun()
+
+                # st.session_state.mostrar_form_cita = False
+                # st.session_state.nombre_para_cita = ""
+                # st.session_state.telefono_para_cita = ""
+                # st.rerun()
             else:
                 st.session_state.errores_cita = []
                 st.session_state.mostrar_form_cita = False
