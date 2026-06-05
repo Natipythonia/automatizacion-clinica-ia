@@ -278,6 +278,9 @@ if st.session_state.mostrar_form_cita:
             st.warning("Introduce tu email para recibir la confirmación.")
         else:
             fecha_hora_cita = datetime.combine(fecha_cita, hora_cita)
+
+            st.write("🚀 Llegué al bloque de confirmación")
+
             errores = []
 
             # Google Calendar
