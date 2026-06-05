@@ -94,13 +94,14 @@ def crear_evento_calendar(nombre, fecha_hora, email_paciente=None):
 
 
 def enviar_email_confirmacion(email_paciente, nombre, fecha_hora):
+
     GMAIL_USER = st.secrets["GMAIL_USER"]
     GMAIL_APP_PASSWORD = st.secrets["GMAIL_APP_PASSWORD"]
 
     msg = MIMEMultipart()
     msg["From"] = GMAIL_USER
     msg["To"] = email_paciente
-    msg["Subject"] = "Confirmación de cita — Clínica de Fisioterapia"
+    msg["Subject"] = "Confirmación de cita – Clínica de Fisioterapia"
 
     cuerpo = f"""Hola {nombre},
 
@@ -111,11 +112,12 @@ Si necesitas cancelar o cambiar la cita, responde a este email.
 Un saludo,
 Clínica de Fisioterapia
 """
+
     msg.attach(MIMEText(cuerpo, "plain", "utf-8"))
 
-with smtplib.SMTP_SSL("smtp.gmail.com", 465) as server:
-    server.login(GMAIL_USER, GMAIL_APP_PASSWORD)
-    server.sendmail(GMAIL_USER, email_paciente, msg.as_string())
+    with smtplib.SMTP_SSL("smtp.gmail.com", 465) as server:
+        server.login(GMAIL_USER, GMAIL_APP_PASSWORD)
+        server.sendmail(GMAIL_USER, email_paciente, msg.as_string())
 
 
 def guardar_cita_programada(nombre, email, telefono, fecha_hora):
