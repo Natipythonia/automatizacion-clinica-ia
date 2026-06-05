@@ -114,8 +114,8 @@ Clínica de Fisioterapia
     msg.attach(MIMEText(cuerpo, "plain", "utf-8"))
 
     with smtplib.SMTP_SSL("smtp.gmail.com", 465) as server:
-        server.login(GMAIL_USER, GMAIL_PASSWORD)
-        server.sendmail(GMAIL_USER, email_paciente, msg.as_string())
+    server.login(GMAIL_USER, GMAIL_APP_PASSWORD)
+    server.sendmail(GMAIL_USER, email_paciente, msg.as_string())
 
 
 def guardar_cita_programada(nombre, email, telefono, fecha_hora):
