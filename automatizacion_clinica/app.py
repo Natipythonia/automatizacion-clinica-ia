@@ -89,7 +89,7 @@ def crear_evento_calendar(nombre, fecha_hora, email_paciente=None):
         "end": {"dateTime": fin.isoformat(), "timeZone": "Europe/Madrid"},
     }
 
-    CALENDAR_ID = os.getenv("GOOGLE_CALENDAR_ID", "primary")
+    CALENDAR_ID = st.secrets["GOOGLE_CALENDAR_ID"]
     service.events().insert(calendarId=CALENDAR_ID, body=evento).execute()
 
 
