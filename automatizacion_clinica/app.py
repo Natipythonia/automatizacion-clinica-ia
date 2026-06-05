@@ -390,16 +390,27 @@ with open(RUTA_CSV, "rb") as archivo_csv:
 st.markdown("## ✏️ Actualizar estado de lead")
 
 if not df.empty:
-    indice_lead = st.selectbox("Selecciona el lead por índice", df.index.tolist())
-    nuevo_estado = st.selectbox(
-    "Nuevo estado",
-    ["nuevo", "contactado", "cita agendada", "cancelado"]
-)
+    indice_lead = ...
+    nuevo_estado = ...
 
     if st.button("Actualizar estado"):
-        df.loc[indice_lead, "estado"] = nuevo_estado
-        df.to_csv(RUTA_CSV, index=False)
-        st.success("Estado actualizado correctamente")
+        ...
         st.rerun()
+
+    st.markdown("---")
+    st.markdown("## 🗑️ Eliminar lead")
+
+    indice_borrar = st.selectbox(
+        "Selecciona el lead a eliminar",
+        df.index.tolist(),
+        key="borrar_lead"
+    )
+
+    if st.button("🗑️ Eliminar lead"):
+        df = df.drop(indice_borrar)
+        df.to_csv(RUTA_CSV, index=False)
+        st.success("Lead eliminado correctamente")
+        st.rerun()
+
 else:
     st.info("No hay leads para actualizar todavía.")
