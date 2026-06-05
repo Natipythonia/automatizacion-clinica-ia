@@ -113,7 +113,7 @@ Clínica de Fisioterapia
 """
     msg.attach(MIMEText(cuerpo, "plain", "utf-8"))
 
-    with smtplib.SMTP_SSL("smtp.gmail.com", 465) as server:
+with smtplib.SMTP_SSL("smtp.gmail.com", 465) as server:
     server.login(GMAIL_USER, GMAIL_APP_PASSWORD)
     server.sendmail(GMAIL_USER, email_paciente, msg.as_string())
 
