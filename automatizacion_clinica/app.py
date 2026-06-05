@@ -94,8 +94,8 @@ def crear_evento_calendar(nombre, fecha_hora, email_paciente=None):
 
 
 def enviar_email_confirmacion(email_paciente, nombre, fecha_hora):
-    GMAIL_USER = os.getenv("GMAIL_USER")
-    GMAIL_PASSWORD = os.getenv("GMAIL_APP_PASSWORD")
+    GMAIL_USER = st.secrets["GMAIL_USER"]
+    GMAIL_APP_PASSWORD = st.secrets["GMAIL_APP_PASSWORD"]
 
     msg = MIMEMultipart()
     msg["From"] = GMAIL_USER
